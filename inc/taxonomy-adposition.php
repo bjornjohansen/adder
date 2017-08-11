@@ -2,17 +2,19 @@
 /**
  * Handles the taxonomy adposition.
  *
- * @package Adder\Taxonomy
+ * @package Adder
  */
+
+namespace Adder;
 
 /**
  * Register the adposition taxonomy
  *
  * @since 0.0.1
  */
-function adder_register_taxonomy_adposition() {
+function register_taxonomy_adposition() {
 
-	$labels = array(
+	$labels = [
 		'name'                       => _x( 'Ad positions', 'Taxonomy General Name', 'adder' ),
 		'singular_name'              => _x( 'Ad position', 'Taxonomy Singular Name', 'adder' ),
 		'menu_name'                  => _x( 'Ad positions', 'Taxonomy Menu Name', 'adder' ),
@@ -33,8 +35,8 @@ function adder_register_taxonomy_adposition() {
 		'no_terms'                   => __( 'No ad positions', 'adder' ),
 		'items_list'                 => __( 'Ad positions list', 'adder' ),
 		'items_list_navigation'      => __( 'Ad positions list navigation', 'adder' ),
-	);
-	$args = array(
+	];
+	$args = [
 		'labels'                     => $labels,
 		'hierarchical'               => true,
 		'public'                     => true,
@@ -44,8 +46,8 @@ function adder_register_taxonomy_adposition() {
 		'show_tagcloud'              => false,
 		'rewrite'                    => false,
 		'show_in_rest'               => false,
-	);
-	register_taxonomy( 'adposition', array( 'adderad' ), $args );
+	];
+	register_taxonomy( 'adposition', [ 'adderad' ], $args );
 
 }
-add_action( 'init', 'adder_register_taxonomy_adposition' );
+

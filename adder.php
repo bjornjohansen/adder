@@ -16,6 +16,8 @@ License: GPLv2 or later
 Text Domain: adder
 */
 
+namespace Adder;
+
 /*
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -34,15 +36,21 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 Copyright 2017 Bjørn Johansen
 */
 
+include dirname( __FILE__ ) . '/vendor/autoload.php';
 include dirname( __FILE__ ) . '/inc/taxonomy-adposition.php';
 include dirname( __FILE__ ) . '/inc/cpt-adderad.php';
+
+if ( ! defined( 'FM_VERSION' ) ) {
+	include dirname( __FILE__ ) . '/vendor/alleyinteractive/wordpress-fieldmanager/fieldmanager.php';
+}
 
 /**
  * Initialize Adder
  *
  * @since 0.0.1
  */
-function adder_init() {
-
+function init() {
+	register_cpt_adderad();
+	register_taxonomy_adposition();
 }
-add_action( 'init', 'adder_init' );
+add_action( 'init', __NAMESPACE__ . '\\init' );

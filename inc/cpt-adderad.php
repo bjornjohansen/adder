@@ -2,17 +2,19 @@
 /**
  * Mangage the CPT adderad.
  *
- * @package Adder\CPT
+ * @package Adder
  */
+
+namespace Adder;
 
 /**
  * Register the CPT adderad.
  *
  * @since 0.0.1
  */
-function adder_register_cpt_adderad() {
+function register_cpt_adderad() {
 
-	$labels = array(
+	$labels = [
 		'name'                  => _x( 'Ads', 'Post Type General Name', 'adder' ),
 		'singular_name'         => _x( 'Ad', 'Post Type Singular Name', 'adder' ),
 		'menu_name'             => _x( 'Ads', 'Post Type Menu Name', 'adder' ),
@@ -40,12 +42,12 @@ function adder_register_cpt_adderad() {
 		'items_list'            => __( 'Ads list', 'adder' ),
 		'items_list_navigation' => __( 'Ads list navigation', 'adder' ),
 		'filter_items_list'     => __( 'Filter ads list', 'adder' ),
-	);
-	$args = array(
+	];
+	$args = [
 		'label'                 => __( 'Ad', 'adder' ),
 		'description'           => __( 'Better ads', 'adder' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title', 'thumbnail' ),
+		'supports'              => array( 'title' ),
 		'hierarchical'          => false,
 		'public'                => true,
 		'show_ui'               => true,
@@ -60,8 +62,7 @@ function adder_register_cpt_adderad() {
 		'publicly_queryable'    => false,
 		'capability_type'       => 'page',
 		'show_in_rest'          => false,
-	);
+	];
 	register_post_type( 'adderad', $args );
 
 }
-add_action( 'init', 'adder_register_cpt_adderad' );
