@@ -48,4 +48,4 @@ function adder_register_taxonomy_adposition() {
 	register_taxonomy( 'adposition', array( 'adderad' ), $args );
 
 }
-add_action( 'init', 'adder_taxonomy_ad_position' );
+add_action( 'init', 'adder_register_taxonomy_adposition' );
