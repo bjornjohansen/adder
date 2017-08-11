@@ -34,7 +34,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 Copyright 2017 Bjørn Johansen
 */
 
-add_action( 'init', 'adder_init' );
+include dirname( __FILE__ ) . '/inc/taxonomy-adposition.php';
+include dirname( __FILE__ ) . '/inc/cpt-adderad.php';
 
 /**
  * Initialize Adder
@@ -44,3 +45,4 @@ add_action( 'init', 'adder_init' );
 function adder_init() {
 
 }
+add_action( 'init', 'adder_init' );
