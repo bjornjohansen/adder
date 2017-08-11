@@ -66,13 +66,13 @@ function register_cpt_adderad() {
 	register_post_type( 'adderad', $args );
 
 	add_action( 'fm_post_adderad', function() {
-		$fm_ad_content = new Fieldmanager_Group( [
+		$fm_ad_content = new \Fieldmanager_Group( [
 			'name' => 'ad_content',
 			'children' => [
-				'image' => new Fieldmanager_Media( __( 'Image', 'adder' ), [
+				'image' => new \Fieldmanager_Media( __( 'Image', 'adder' ), [
 					'mime_type' => 'image',
 				] ),
-				'url' => new Fieldmanager_Link( __( 'Target URL', 'adder' ) ),
+				'url' => new \Fieldmanager_Link( __( 'Target URL', 'adder' ) ),
 			],
 		] );
 		$fm_ad_content->add_meta_box( __( 'Ad Content', 'adder' ), 'adderad' );
